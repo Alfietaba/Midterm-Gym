@@ -1,0 +1,30 @@
+name: checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build the single-file app
+        run: python3 build/build.py
+      - name: Published page matches the sources
+        run: git diff --exit-code docs/index.html
+      - name: Every stored answer grades as correct with the app's own grader
+        run: node tools/check_keys.js
+      - name: Question generators produce valid, gradable problems
+        run: node tools/check_gens.js
+      - name: Generated math answers match an independent solver
+        run: node tools/check_math.js
+      - name: Every C++ question and model solution compiles and prints the expected output
+        run: node tools/verify_mte121.js data/mte121.js
