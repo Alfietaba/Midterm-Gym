@@ -2,7 +2,7 @@
 
 A study app I built for my first-term Mechatronics Engineering midterms at the University of Waterloo. It's designed around one rule: **the AI helps me practise, but it doesn't do the thinking for me.**
 
-**Try it: [alfietaba.github.io/midterm-gym](https://alfietaba.github.io/midterm-gym/)**. It runs in any browser, on a phone or a laptop, and saves your progress on your own device.
+**Try it: [alfietaba.github.io/Midterm-Gym](https://alfietaba.github.io/Midterm-Gym/)**. It runs in any browser, on a phone or a laptop, and saves your progress on your own device.
 
 ![A practice question with the progress panel on the left and the formula sheet docked on the right](docs/screenshots/practice.png)
 
